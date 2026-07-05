@@ -263,6 +263,15 @@ export default function Envelope({ onOpen }) {
                 <span className={styles.scrollHintArrow} aria-hidden="true">↓</span>
               </motion.div>
 
+              <motion.div
+                className={styles.envelopeInlineCta}
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.85, duration: 0.8, ease: 'easeOut' }}
+              >
+                <span className={styles.envelopeInlineCtaText}>انقر هنا لفتح الدعوة</span>
+              </motion.div>
+
               {/* ── Invitation card (inside envelope) ── */}
               <motion.div
                 className={styles.envelopeCard}
