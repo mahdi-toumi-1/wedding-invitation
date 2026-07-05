@@ -244,6 +244,13 @@ export default function Envelope({ onOpen }) {
                 </svg>
               </div>
 
+              <div className={styles.doorLetterLeft} aria-hidden="true">
+                غ
+              </div>
+              <div className={styles.doorLetterRight} aria-hidden="true">
+                آ
+              </div>
+
               {/* ── Invitation card (inside envelope) ── */}
               <motion.div
                 className={styles.envelopeCard}
@@ -252,7 +259,6 @@ export default function Envelope({ onOpen }) {
                 aria-hidden="true"
               >
                 <div className={styles.envelopeCardContent}>
-                  <span className={styles.envelopeCardMonogram}>غ ♥ آ</span>
                   <div className={styles.envelopeCardLine} />
                   <span className={styles.envelopeCardSubtext}>دعوة زفاف</span>
                 </div>

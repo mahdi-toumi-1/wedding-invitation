@@ -121,6 +121,21 @@
     width: 56px;
     height: 56px;
   }
+
+  .doorLetterLeft,
+  .doorLetterRight {
+    font-size: 1.8rem;
+    top: 48%;
+    transform: translateY(-50%) translateX(0);
+  }
+
+  .doorLetterLeft {
+    left: 20%;
+  }
+
+  .doorLetterRight {
+    right: 20%;
+  }
 }
 
 /* ── Flap (animated) ── */
