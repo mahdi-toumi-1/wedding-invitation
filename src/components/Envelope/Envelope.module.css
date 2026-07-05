@@ -119,22 +119,23 @@
 .doorLetterLeft,
 .doorLetterRight {
   position: absolute;
-  top: 50%;
+  top: 45%;
   transform: translateY(-50%);
   font-size: 2rem;
   line-height: 1;
   color: var(--gold-mat);
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.65);
-  z-index: 12;
+  z-index: 4;
   pointer-events: none;
+  opacity: 0.9;
 }
 
 .doorLetterLeft {
-  left: 24%;
+  left: 18%;
 }
 
 .doorLetterRight {
-  right: 24%;
+  right: 18%;
 }
 
 .scrollHint {
@@ -173,16 +174,16 @@
 
   .doorLetterLeft,
   .doorLetterRight {
-    font-size: 1.8rem;
-    top: 50%;
+    font-size: 1.7rem;
+    top: 44%;
   }
 
   .doorLetterLeft {
-    left: 22%;
+    left: 17%;
   }
 
   .doorLetterRight {
-    right: 22%;
+    right: 17%;
   }
 }
 
