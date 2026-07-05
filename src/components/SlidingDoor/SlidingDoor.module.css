@@ -83,15 +83,21 @@
 .doorLetter {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
+  left: 50%;
+  transform: translate(-50%, -50%);
   font-family: var(--font-title);
   font-size: clamp(4rem, 10vw, 8rem);
   color: var(--gold-mat);
   text-shadow: 0 4px 20px rgba(168,134,74,0.15);
   pointer-events: none;
+  z-index: 2;
 }
-.panelLeft .doorLetter { right: 8%; }
-.panelRight .doorLetter { left: 8%; }
+.panelLeft .doorLetter {
+  left: 60%;
+}
+.panelRight .doorLetter {
+  left: 40%;
+}
 
 /* ── Gold vertical edge line on panels (where they meet) ── */
 .panelEdge {
