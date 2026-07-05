@@ -25,6 +25,7 @@ body {
   direction: rtl;
   text-align: right;
   overflow-x: hidden;
+  word-break: break-word;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* Subtle noise texture and a beautiful gold geometric pattern */
@@ -70,6 +71,16 @@ p, span, li {
 }
 @media (max-width: 768px) {
   .section { padding: var(--space-2xl) var(--space-md); }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 15px;
+  }
+
+  .section {
+    padding: var(--space-xl) var(--space-sm);
+  }
 }
 
 /* ── Gold divider ── */

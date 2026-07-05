@@ -39,10 +39,11 @@
 
 .sectionTitle {
   font-family: var(--font-title);
-  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  font-size: clamp(1.5rem, 4vw, 2.4rem);
   color: var(--gold-mat);
   text-align: center;
   margin-bottom: var(--space-2xl);
+  line-height: 1.3;
 }
 
 /* ── Cards grid ── */
@@ -56,6 +57,23 @@
   .cardsGrid {
     grid-template-columns: 1fr;
     gap: var(--space-md);
+  }
+
+  .sectionTitle {
+    margin-bottom: var(--space-xl);
+    font-size: clamp(1.3rem, 6vw, 1.8rem);
+  }
+
+  .infoCard {
+    padding: var(--space-lg) var(--space-md);
+  }
+
+  .cardValue {
+    font-size: clamp(1rem, 4.2vw, 1.3rem);
+  }
+
+  .cardSubValue {
+    font-size: 0.9rem;
   }
 }
 
