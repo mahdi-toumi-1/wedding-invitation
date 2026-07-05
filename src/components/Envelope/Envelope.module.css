@@ -21,9 +21,9 @@
   position: absolute;
   inset: 0;
   background-image:
-    radial-gradient(circle at 20% 80%, rgba(200,169,106,0.04) 0%, transparent 40%),
-    radial-gradient(circle at 80% 20%, rgba(200,169,106,0.04) 0%, transparent 40%),
-    radial-gradient(circle at 50% 50%, rgba(30,43,38,0.6) 0%, transparent 70%);
+    radial-gradient(circle at 20% 80%, rgba(200, 169, 106, 0.04) 0%, transparent 40%),
+    radial-gradient(circle at 80% 20%, rgba(200, 169, 106, 0.04) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(30, 43, 38, 0.6) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -44,10 +44,23 @@
 }
 
 @keyframes particleFloat {
-  0%   { transform: translateY(100vh) rotate(0deg); opacity: 0; }
-  10%  { opacity: 0.3; }
-  90%  { opacity: 0.1; }
-  100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 0.3;
+  }
+
+  90% {
+    opacity: 0.1;
+  }
+
+  100% {
+    transform: translateY(-10vh) rotate(360deg);
+    opacity: 0;
+  }
 }
 
 /* ── Envelope wrapper ── */
@@ -58,6 +71,7 @@
   align-items: center;
   gap: var(--space-xl);
   cursor: pointer;
+  z-index: 1;
 }
 
 /* ── Envelope container ── */
@@ -66,7 +80,7 @@
   width: 380px;
   height: 270px;
   perspective: 1200px;
-  filter: drop-shadow(0 20px 60px rgba(0,0,0,0.8)) drop-shadow(0 0 40px rgba(200,169,106,0.15));
+  filter: drop-shadow(0 20px 60px rgba(0, 0, 0, 0.8)) drop-shadow(0 0 40px rgba(200, 169, 106, 0.15));
 }
 
 @media (max-width: 480px) {
@@ -133,19 +147,22 @@
   height: 75%;
   background: linear-gradient(160deg, var(--ivory) 0%, var(--cream) 50%, var(--champagne) 100%);
   border-radius: 3px;
-  z-index: 4;
+  z-index: 6;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(200,169,106,0.3);
-  box-shadow: 0 0 0 1px rgba(200,169,106,0.1);
+  border: 1px solid rgba(200, 169, 106, 0.3);
+  box-shadow: 0 0 0 1px rgba(200, 169, 106, 0.1);
 }
 
 .envelopeCardContent {
+  position: relative;
+  z-index: 2;
   text-align: center;
   color: var(--text-dark);
   font-family: var(--font-title);
   padding: var(--space-sm);
+  pointer-events: none;
 }
 
 .envelopeCardMonogram {
@@ -172,6 +189,8 @@
 
 /* ── CTA text below envelope ── */
 .ctaText {
+  position: relative;
+  z-index: 8;
   font-family: var(--font-body);
   font-size: clamp(0.9rem, 2vw, 1.15rem);
   color: var(--gold-mat);
@@ -199,7 +218,7 @@
   transform: translate(-50%, -50%);
   width: 120%;
   height: 120%;
-  border: 1px solid rgba(200,169,106,0.15);
+  border: 1px solid rgba(200, 169, 106, 0.15);
   border-radius: 8px;
   animation: pulseRingAnim 3s ease-in-out infinite;
   pointer-events: none;
@@ -213,8 +232,17 @@
 }
 
 @keyframes pulseRingAnim {
-  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.3; }
-  50%       { transform: translate(-50%, -50%) scale(1.05); opacity: 0.1; }
+
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.3;
+  }
+
+  50% {
+    transform: translate(-50%, -50%) scale(1.05);
+    opacity: 0.1;
+  }
 }
 
 /* ── Corner decorations ── */
@@ -225,7 +253,26 @@
   opacity: 0.15;
   pointer-events: none;
 }
-.cornerDecor.topLeft    { top: 20px; left: 20px; }
-.cornerDecor.topRight   { top: 20px; right: 20px; transform: scaleX(-1); }
-.cornerDecor.bottomLeft { bottom: 20px; left: 20px; transform: scaleY(-1); }
-.cornerDecor.bottomRight{ bottom: 20px; right: 20px; transform: scale(-1); }
+
+.cornerDecor.topLeft {
+  top: 20px;
+  left: 20px;
+}
+
+.cornerDecor.topRight {
+  top: 20px;
+  right: 20px;
+  transform: scaleX(-1);
+}
+
+.cornerDecor.bottomLeft {
+  bottom: 20px;
+  left: 20px;
+  transform: scaleY(-1);
+}
+
+.cornerDecor.bottomRight {
+  bottom: 20px;
+  right: 20px;
+  transform: scale(-1);
+}

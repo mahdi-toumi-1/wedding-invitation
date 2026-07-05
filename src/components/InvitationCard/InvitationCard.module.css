@@ -226,6 +226,7 @@
   color: var(--gold-dark);
   filter: drop-shadow(0 0 5px rgba(168, 134, 74, 0.2));
   animation: float 3s ease-in-out infinite;
+  flex-shrink: 0;
 }
 
 
@@ -314,7 +315,8 @@
   }
 
   .roseIcon {
-    display: none;
+    font-size: 1.4rem;
+    margin: 0.15rem 0;
   }
 
   .cardVerse {
