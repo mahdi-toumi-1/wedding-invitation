@@ -125,7 +125,7 @@
   line-height: 1;
   color: var(--gold-mat);
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.65);
-  z-index: 7;
+  z-index: 12;
   pointer-events: none;
 }
 
@@ -144,13 +144,23 @@
   transform: translateX(-50%);
   z-index: 9;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 0.15rem;
   pointer-events: none;
 }
 
+.scrollHintText {
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  color: var(--gold-mat);
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  text-transform: uppercase;
+}
+
 .scrollHintArrow {
-  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-size: clamp(1.2rem, 2.6vw, 1.7rem);
   color: var(--gold-mat);
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.85);
 }

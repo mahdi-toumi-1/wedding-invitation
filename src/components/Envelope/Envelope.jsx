@@ -156,6 +156,8 @@ export default function Envelope({ onOpen }) {
             variants={wrapperVariants}
             animate={phase === 'animating' ? 'zoom' : 'initial'}
             onClick={handleClick}
+            whileTap={{ scale: 0.97 }}
+            transition={{ type: 'spring', stiffness: 320, damping: 20 }}
           >
             {/* ── Envelope container ── */}
             <div className={styles.envelopeContainer}>
@@ -257,6 +259,7 @@ export default function Envelope({ onOpen }) {
                 animate={{ opacity: 1, y: [0, 6, 0] }}
                 transition={{ delay: 1.1, duration: 1.6, repeat: Infinity, ease: 'easeInOut' }}
               >
+                <span className={styles.scrollHintText}>هناك محتوى في الأسفل</span>
                 <span className={styles.scrollHintArrow} aria-hidden="true">↓</span>
               </motion.div>
 
@@ -388,7 +391,7 @@ export default function Envelope({ onOpen }) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8, duration: 0.8, ease: 'easeOut' }}
             >
-              <p className={styles.ctaText}>اضغط لفتح الدعوة</p>
+              <p className={styles.ctaText}>انقر لفتح الدعوة</p>
               <span className={styles.ctaArrow} aria-hidden="true">✦</span>
             </motion.div>
           </motion.div>

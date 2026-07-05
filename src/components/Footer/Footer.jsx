@@ -53,9 +53,9 @@ export default function Footer() {
           whileInView={{ opacity: 0.7, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          aria-label="غيث وآمنة"
+          aria-label="غيث وأماني"
         >
-          غ &nbsp;♥&nbsp; آ
+          غ &nbsp;♥&nbsp; أ
         </motion.p>
 
         {/* Separator */}

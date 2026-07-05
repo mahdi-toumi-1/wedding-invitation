@@ -96,7 +96,7 @@ export default function Couple() {
           >
             <span className={styles.nameRole}>العروسة</span>
             <div className={styles.nameRow}>
-              <span className={styles.nameMain} aria-label="آمنة البلعيدي">آمنة البلعيدي</span>
+              <span className={styles.nameMain} aria-label="أماني البلعيدي">أماني البلعيدي</span>
             </div>
             <div className={styles.nameUnderline} aria-hidden="true" />
           </motion.div>

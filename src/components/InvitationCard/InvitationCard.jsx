@@ -126,7 +126,7 @@ export default function InvitationCard() {
               <GiDiamondRing className={styles.roseIcon} aria-hidden="true" />
 
               {/* Bride */}
-              <span className={styles.brideName}>أميني البلعيدي</span>
+              <span className={styles.brideName}>أماني البلعيدي</span>
             </div>
           </motion.div>
 
