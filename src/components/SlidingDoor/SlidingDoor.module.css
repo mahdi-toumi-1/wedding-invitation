@@ -277,6 +277,7 @@
 /* Subtle scale instead of moving right/left */
 .ctaButton:hover .ctaButtonIcon {
   transform: scale(1.1);
+  color: var(--gold-mat);
 }
 
 /* ── Hint text below button ── */
