@@ -142,7 +142,7 @@ export default function InvitationCard() {
 
           {/* Location */}
           <motion.div className={styles.locationBlock} {...anim(0.95)}>
-            <p>📍 قاعة الأفراح "Central Parc" – عين دراهم</p>
+            <p>قاعة الأفراح "Central Parc" – عين دراهم</p>
             <p>(المسبح البلدي القديم – عين دراهم)</p>
           </motion.div>
 
