@@ -6,7 +6,9 @@
 @import './variables.css';
 
 /* ── Reset & Base ── */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -29,20 +31,26 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* Subtle noise texture and a beautiful gold geometric pattern */
-  background-image: 
+  background-image:
     url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cpath d='M40 0 L80 40 L40 80 L0 40 Z' stroke='%23A8864A' stroke-width='0.5' stroke-opacity='0.1'/%3E%3Ccircle cx='40' cy='40' r='15' stroke='%23A8864A' stroke-width='0.5' stroke-opacity='0.05'/%3E%3C/g%3E%3C/svg%3E"),
     url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.018'/%3E%3C/svg%3E");
 }
 
 /* ── Typography ── */
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
   font-family: var(--font-title);
   line-height: 1.4;
   letter-spacing: 0.02em;
   color: var(--text-primary);
 }
 
-p, span, li {
+p,
+span,
+li {
   font-family: var(--font-body);
   line-height: 1.8;
   color: var(--text-primary);
@@ -55,8 +63,14 @@ p, span, li {
 }
 
 /* ── Scrollbar ── */
-::-webkit-scrollbar { width: 5px; }
-::-webkit-scrollbar-track { background: var(--cream); }
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--cream);
+}
+
 ::-webkit-scrollbar-thumb {
   background: var(--gold-mat);
   border-radius: var(--radius-full);
@@ -69,8 +83,11 @@ p, span, li {
   padding: var(--space-3xl) var(--space-xl);
   overflow: hidden;
 }
+
 @media (max-width: 768px) {
-  .section { padding: var(--space-2xl) var(--space-md); }
+  .section {
+    padding: var(--space-2xl) var(--space-md);
+  }
 }
 
 @media (max-width: 480px) {
@@ -92,6 +109,7 @@ p, span, li {
   max-width: 360px;
   margin: var(--space-xl) auto;
 }
+
 .gold-divider::before,
 .gold-divider::after {
   content: '';
@@ -100,6 +118,7 @@ p, span, li {
   background: linear-gradient(90deg, transparent, var(--gold-mat), transparent);
   opacity: 0.4;
 }
+
 .gold-divider-icon {
   color: var(--gold-mat);
   font-size: 0.9rem;
@@ -109,17 +128,21 @@ p, span, li {
 
 /* ── Shimmer animation ── */
 @keyframes shimmer {
-  0%   { background-position: -200% center; }
-  100% { background-position: 200% center; }
+  0% {
+    background-position: -200% center;
+  }
+
+  100% {
+    background-position: 200% center;
+  }
 }
+
 .shimmer-text {
-  background: linear-gradient(
-    105deg,
-    var(--gold-dark) 0%,
-    var(--gold-shine) 35%,
-    var(--gold-mat) 60%,
-    var(--gold-dark) 100%
-  );
+  background: linear-gradient(105deg,
+      var(--gold-dark) 0%,
+      var(--gold-shine) 35%,
+      var(--gold-mat) 60%,
+      var(--gold-dark) 100%);
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -129,14 +152,30 @@ p, span, li {
 
 /* ── Float animation ── */
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50%       { transform: translateY(-6px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
 }
 
 /* ── Pulse ring ── */
 @keyframes pulseRingAnim {
-  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.3; }
-  50%       { transform: translate(-50%, -50%) scale(1.05); opacity: 0.08; }
+
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.3;
+  }
+
+  50% {
+    transform: translate(-50%, -50%) scale(1.05);
+    opacity: 0.08;
+  }
 }
 
 /* ── Section title ── */
@@ -158,14 +197,22 @@ p, span, li {
 }
 
 /* ── Utility ── */
-.text-center { text-align: center; }
-.text-gold   { color: var(--gold-mat); }
+.text-center {
+  text-align: center;
+}
+
+.text-gold {
+  color: var(--gold-mat);
+}
+
 .sr-only {
   position: absolute;
-  width: 1px; height: 1px;
-  padding: 0; margin: -1px;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
   overflow: hidden;
-  clip: rect(0,0,0,0);
+  clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border-width: 0;
 }
