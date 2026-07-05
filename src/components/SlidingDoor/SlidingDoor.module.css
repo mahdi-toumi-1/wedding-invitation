@@ -212,6 +212,7 @@
 
 /* Button pill (Round Seal) */
 .ctaButtonPill {
+  color: var(--gold-mat);
   position: relative;
   display: inline-flex;
   align-items: center;
