@@ -251,6 +251,15 @@ export default function Envelope({ onOpen }) {
                 آ
               </div>
 
+              <motion.div
+                className={styles.scrollHint}
+                initial={{ opacity: 0, y: -6 }}
+                animate={{ opacity: 1, y: [0, 6, 0] }}
+                transition={{ delay: 1.1, duration: 1.6, repeat: Infinity, ease: 'easeInOut' }}
+              >
+                <span className={styles.scrollHintArrow} aria-hidden="true">↓</span>
+              </motion.div>
+
               {/* ── Invitation card (inside envelope) ── */}
               <motion.div
                 className={styles.envelopeCard}
