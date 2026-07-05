@@ -87,8 +87,8 @@ export default function Footer() {
           transition={{ duration: 0.8, delay: 0.4 }}
           style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', alignItems: 'center' }}
         >
-          <p className={styles.footerDate} aria-label="تاريخ الحفل: 31 جويلية 2025">
-            31 جويلية 2025 &nbsp;✦&nbsp; عين دراهم
+          <p className={styles.footerDate} aria-label="تاريخ الحفل: 31 جويلية 2026">
+            31 جويلية 2026 &nbsp;✦&nbsp; عين دراهم
           </p>
           <p className={styles.footerCredits} style={{ fontFamily: 'var(--font-body)', fontSize: '0.75rem', color: 'var(--text-muted)', opacity: 0.8, marginTop: '1rem' }}>
             Created by Mahdi Toumi with love ♥

@@ -69,7 +69,7 @@ const EVENT_CARDS = [
     id: 'date',
     label: 'التاريخ',
     value: 'الجمعة 31 جويلية',
-    subValue: '2025',
+    subValue: '2026',
     ariaLabel: 'تاريخ الحفل: الجمعة 31 جويلية',
   },
   {
