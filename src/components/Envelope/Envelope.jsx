@@ -387,11 +387,13 @@ export default function Envelope({ onOpen }) {
 
             {/* ── CTA Text ── */}
             <motion.div
+              className={styles.ctaBlock}
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8, duration: 0.8, ease: 'easeOut' }}
             >
-              <p className={styles.ctaText}>انقر لفتح الدعوة</p>
+              <p className={styles.ctaText}>انقر هنا لفتح الدعوة</p>
+              <p className={styles.ctaSubtext}>اضغط على الزر لبدء التجربة</p>
               <span className={styles.ctaArrow} aria-hidden="true">✦</span>
             </motion.div>
           </motion.div>

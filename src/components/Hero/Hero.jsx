@@ -99,7 +99,8 @@ export default function Hero() {
         transition={{ delay: 1.8, duration: 1 }}
         aria-hidden="true"
       >
-        <span>تمرير</span>
+        <span className={styles.scrollIndicatorLabel}>مرر لأسفل</span>
+        <span className={styles.scrollIndicatorArrow}>↓</span>
       </motion.div>
     </section>
   );

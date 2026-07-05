@@ -204,9 +204,10 @@
 /* ── Card inside ── */
 .envelopeCard {
   position: absolute;
-  left: 8%;
-  right: 8%;
+  left: 50%;
   bottom: 6px;
+  transform: translateX(-50%);
+  width: min(84%, 320px);
   height: 75%;
   background: linear-gradient(160deg, var(--ivory) 0%, var(--cream) 50%, var(--champagne) 100%);
   border-radius: 3px;
@@ -251,6 +252,13 @@
 }
 
 /* ── CTA text below envelope ── */
+.ctaBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+}
+
 .ctaText {
   position: relative;
   z-index: 8;
@@ -261,6 +269,14 @@
   text-align: center;
   font-weight: 500;
   animation: float 3s ease-in-out infinite;
+}
+
+.ctaSubtext {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: rgba(232, 201, 122, 0.85);
+  letter-spacing: 0.1em;
+  text-align: center;
 }
 
 .ctaArrow {
