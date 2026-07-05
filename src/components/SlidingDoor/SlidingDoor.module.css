@@ -8,7 +8,8 @@
   position: fixed;
   inset: 0;
   z-index: var(--z-door);
-  pointer-events: none; /* panels handle events individually */
+  pointer-events: none;
+  /* panels handle events individually */
   overflow: hidden;
 }
 
@@ -58,6 +59,7 @@
   border-radius: 2px;
   pointer-events: none;
 }
+
 .panelDeco::before {
   content: '';
   position: absolute;
@@ -74,10 +76,29 @@
   opacity: 0.18;
   pointer-events: none;
 }
-.panelCorner.tl { top: 40px;    left: 40px; }
-.panelCorner.bl { bottom: 40px; left: 40px;  transform: scaleY(-1); }
-.panelCorner.tr { top: 40px;    right: 40px; transform: scaleX(-1); }
-.panelCorner.br { bottom: 40px; right: 40px; transform: scale(-1); }
+
+.panelCorner.tl {
+  top: 40px;
+  left: 40px;
+}
+
+.panelCorner.bl {
+  bottom: 40px;
+  left: 40px;
+  transform: scaleY(-1);
+}
+
+.panelCorner.tr {
+  top: 40px;
+  right: 40px;
+  transform: scaleX(-1);
+}
+
+.panelCorner.br {
+  bottom: 40px;
+  right: 40px;
+  transform: scale(-1);
+}
 
 /* ── Letters on doors ── */
 .doorLetter {
@@ -88,13 +109,15 @@
   font-family: var(--font-title);
   font-size: clamp(4rem, 10vw, 8rem);
   color: var(--gold-mat);
-  text-shadow: 0 4px 20px rgba(168,134,74,0.15);
+  text-shadow: 0 4px 20px rgba(168, 134, 74, 0.15);
   pointer-events: none;
   z-index: 2;
 }
+
 .panelLeft .doorLetter {
   left: 60%;
 }
+
 .panelRight .doorLetter {
   left: 40%;
 }
@@ -109,8 +132,14 @@
   opacity: 0.25;
   pointer-events: none;
 }
-.panelLeft .panelEdge  { right: 0; }
-.panelRight .panelEdge { left: 0; }
+
+.panelLeft .panelEdge {
+  right: 0;
+}
+
+.panelRight .panelEdge {
+  left: 0;
+}
 
 /* ── Central CTA area (sits above both panels, centered) ── */
 .ctaArea {
@@ -122,7 +151,8 @@
   align-items: center;
   justify-content: center;
   gap: var(--space-xl);
-  pointer-events: none; /* children handle their own pointer events */
+  pointer-events: none;
+  /* children handle their own pointer events */
 }
 
 /* ── Monogram / title above button ── */
@@ -173,6 +203,7 @@
   gap: var(--space-md);
   transition: transform 0.3s var(--ease-elegant);
 }
+
 .ctaButton:focus-visible {
   outline: 2px solid var(--gold-mat);
   outline-offset: 8px;
@@ -194,14 +225,14 @@
     color 0.35s var(--ease-elegant),
     box-shadow 0.35s var(--ease-elegant),
     transform 0.2s var(--ease-spring);
-  background: rgba(253,250,244,0.85);
+  background: rgba(253, 250, 244, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  box-shadow: 
-    0 8px 32px rgba(168,134,74,0.15), 
-    0 0 0 1px rgba(168,134,74,0.1),
-    inset 0 0 0 4px rgba(253,250,244,0.9),
-    inset 0 0 0 5px rgba(168,134,74,0.3);
+  box-shadow:
+    0 8px 32px rgba(168, 134, 74, 0.15),
+    0 0 0 1px rgba(168, 134, 74, 0.1),
+    inset 0 0 0 4px rgba(253, 250, 244, 0.9),
+    inset 0 0 0 5px rgba(168, 134, 74, 0.3);
 }
 
 /* Gentle fade in on hover instead of rising from bottom */
@@ -214,16 +245,23 @@
   transition: opacity 0.4s var(--ease-elegant);
   border-radius: inherit;
 }
+
 .ctaButton:hover .ctaButtonPill {
   color: #fff;
-  box-shadow: 
-    0 12px 40px rgba(168,134,74,0.25), 
-    0 0 0 1px rgba(168,134,74,0.4),
-    inset 0 0 0 2px rgba(253,250,244,0.5);
+  box-shadow:
+    0 12px 40px rgba(168, 134, 74, 0.25),
+    0 0 0 1px rgba(168, 134, 74, 0.4),
+    inset 0 0 0 2px rgba(253, 250, 244, 0.5);
   transform: translateY(-2px);
 }
-.ctaButton:hover .ctaButtonPill::before { opacity: 1; }
-.ctaButton:active .ctaButtonPill { transform: scale(0.97) translateY(0); }
+
+.ctaButton:hover .ctaButtonPill::before {
+  opacity: 1;
+}
+
+.ctaButton:active .ctaButtonPill {
+  transform: scale(0.97) translateY(0);
+}
 
 .ctaButtonLabel {
   position: relative;
@@ -235,8 +273,11 @@
   z-index: 1;
   transition: transform 0.4s var(--ease-elegant);
 }
+
 /* Subtle scale instead of moving right/left */
-.ctaButton:hover .ctaButtonIcon { transform: scale(1.1); }
+.ctaButton:hover .ctaButtonIcon {
+  transform: scale(1.1);
+}
 
 /* ── Hint text below button ── */
 .ctaHint {
@@ -250,6 +291,7 @@
 }
 
 @keyframes pulseHint {
+
   0%,
   100% {
     opacity: 0.8;
@@ -273,17 +315,52 @@
 }
 
 @keyframes particleFloat {
-  0%   { transform: translateY(40px) rotate(0deg); opacity: 0; }
-  15%  { opacity: 0.15; }
-  85%  { opacity: 0.05; }
-  100% { transform: translateY(-60px) rotate(360deg); opacity: 0; }
+  0% {
+    transform: translateY(40px) rotate(0deg);
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 0.15;
+  }
+
+  85% {
+    opacity: 0.05;
+  }
+
+  100% {
+    transform: translateY(-60px) rotate(360deg);
+    opacity: 0;
+  }
 }
 
 @media (max-width: 480px) {
-  .panelCorner { width: 36px; height: 36px; }
-  .panelDeco   { inset: 16px; }
-  .panelCorner.tl { top: 24px;    left: 24px; }
-  .panelCorner.bl { bottom: 24px; left: 24px; }
-  .panelCorner.tr { top: 24px;    right: 24px; }
-  .panelCorner.br { bottom: 24px; right: 24px; }
+  .panelCorner {
+    width: 36px;
+    height: 36px;
+  }
+
+  .panelDeco {
+    inset: 16px;
+  }
+
+  .panelCorner.tl {
+    top: 24px;
+    left: 24px;
+  }
+
+  .panelCorner.bl {
+    bottom: 24px;
+    left: 24px;
+  }
+
+  .panelCorner.tr {
+    top: 24px;
+    right: 24px;
+  }
+
+  .panelCorner.br {
+    bottom: 24px;
+    right: 24px;
+  }
 }

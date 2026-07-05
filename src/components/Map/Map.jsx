@@ -90,7 +90,7 @@ export default function Map() {
             aria-label="فتح الموقع على خرائط جوجل"
             whileTap={{ scale: 0.96 }}
           >
-            <span className={styles.ctaButtonIcon} aria-hidden="true">📍</span>
+            <span className={styles.ctaButtonIcon} aria-hidden="true"></span>
             <span className={styles.ctaButtonText}>عرض الموقع على Google Maps</span>
           </motion.a>
         </motion.div>

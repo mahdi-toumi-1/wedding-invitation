@@ -41,11 +41,11 @@ export default function Couple() {
 
       <div className={styles.container}>
         {/* Couple Illustration */}
-        <motion.div 
-           className={styles.imageWrapper}
-           initial={{ opacity: 0, y: 30 }}
-           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-           transition={{ duration: 1, ease: [0.25, 0.46, 0.45, 0.94] }}
+        <motion.div
+          className={styles.imageWrapper}
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: 1, ease: [0.25, 0.46, 0.45, 0.94] }}
         >
           <img src={coupleImg} alt="رسم للعروسين" className={styles.coupleImage} />
         </motion.div>
