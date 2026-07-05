@@ -142,11 +142,12 @@
   align-items: center;
   gap: 0.2rem;
   color: var(--gold-mat);
-  opacity: 0.5;
+  opacity: 1;
   font-family: var(--font-body);
   font-size: 0.75rem;
   letter-spacing: 0.15em;
   animation: float 2.5s ease-in-out infinite;
+  pointer-events: none;
 }
 
 .scrollIndicatorLabel {

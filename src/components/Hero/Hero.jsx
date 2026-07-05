@@ -94,12 +94,11 @@ export default function Hero() {
       {/* ── Scroll indicator ── */}
       <motion.div
         className={styles.scrollIndicator}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: isInView ? 1 : 0 }}
-        transition={{ delay: 1.8, duration: 1 }}
+        initial={{ opacity: 0.8 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.6, duration: 0.8 }}
         aria-hidden="true"
       >
-        <span className={styles.scrollIndicatorLabel}>مرر لأسفل</span>
         <span className={styles.scrollIndicatorArrow}>↓</span>
       </motion.div>
     </section>
