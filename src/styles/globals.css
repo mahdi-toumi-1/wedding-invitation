@@ -1,0 +1,160 @@
+/* ============================================================
+   GLOBAL STYLES — Wedding Invitation (Light Theme)
+   RTL, Arabic, clean & premium aesthetic
+   ============================================================ */
+
+@import './variables.css';
+
+/* ── Reset & Base ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
+  direction: rtl;
+  text-align: right;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Subtle noise texture and a beautiful gold geometric pattern */
+  background-image: 
+    url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cpath d='M40 0 L80 40 L40 80 L0 40 Z' stroke='%23A8864A' stroke-width='0.5' stroke-opacity='0.1'/%3E%3Ccircle cx='40' cy='40' r='15' stroke='%23A8864A' stroke-width='0.5' stroke-opacity='0.05'/%3E%3C/g%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.018'/%3E%3C/svg%3E");
+}
+
+/* ── Typography ── */
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-title);
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+  color: var(--text-primary);
+}
+
+p, span, li {
+  font-family: var(--font-body);
+  line-height: 1.8;
+  color: var(--text-primary);
+}
+
+/* ── Selection ── */
+::selection {
+  background: var(--gold-mat);
+  color: #fff;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--cream); }
+::-webkit-scrollbar-thumb {
+  background: var(--gold-mat);
+  border-radius: var(--radius-full);
+  opacity: 0.5;
+}
+
+/* ── Section ── */
+.section {
+  position: relative;
+  padding: var(--space-3xl) var(--space-xl);
+  overflow: hidden;
+}
+@media (max-width: 768px) {
+  .section { padding: var(--space-2xl) var(--space-md); }
+}
+
+/* ── Gold divider ── */
+.gold-divider {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  width: 100%;
+  max-width: 360px;
+  margin: var(--space-xl) auto;
+}
+.gold-divider::before,
+.gold-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-mat), transparent);
+  opacity: 0.4;
+}
+.gold-divider-icon {
+  color: var(--gold-mat);
+  font-size: 0.9rem;
+  opacity: 0.6;
+  flex-shrink: 0;
+}
+
+/* ── Shimmer animation ── */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+.shimmer-text {
+  background: linear-gradient(
+    105deg,
+    var(--gold-dark) 0%,
+    var(--gold-shine) 35%,
+    var(--gold-mat) 60%,
+    var(--gold-dark) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
+/* ── Float animation ── */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-6px); }
+}
+
+/* ── Pulse ring ── */
+@keyframes pulseRingAnim {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.3; }
+  50%       { transform: translate(-50%, -50%) scale(1.05); opacity: 0.08; }
+}
+
+/* ── Section title ── */
+.section-title {
+  font-family: var(--font-title);
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  color: var(--gold-mat);
+  text-align: center;
+  margin-bottom: var(--space-xl);
+}
+
+/* ── Arabic verse style ── */
+.quran-verse {
+  font-family: var(--font-quran);
+  font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+  line-height: 2;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+/* ── Utility ── */
+.text-center { text-align: center; }
+.text-gold   { color: var(--gold-mat); }
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border-width: 0;
+}

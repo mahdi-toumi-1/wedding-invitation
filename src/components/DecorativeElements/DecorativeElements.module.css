@@ -1,0 +1,109 @@
+/* ============================================================
+   DecorativeElements Component Styles
+   ============================================================ */
+
+/* ── Arabesque separator ── */
+.separator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-lg) 0;
+  gap: var(--space-md);
+  overflow: hidden;
+}
+
+.separatorLine {
+  flex: 1;
+  max-width: 200px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-border), transparent);
+}
+
+.separatorOrnament {
+  color: var(--gold-mat);
+  font-size: 1.4rem;
+  opacity: 0.6;
+  letter-spacing: 0.3em;
+}
+
+/* ── Floral corner ── */
+.floralCorner {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  opacity: 0.12;
+  pointer-events: none;
+}
+
+/* ── Section flourish heading ── */
+.flourishHeading {
+  position: relative;
+  display: inline-block;
+  font-family: var(--font-title);
+  font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+  color: var(--gold-mat);
+  text-align: center;
+  letter-spacing: 0.08em;
+  padding: 0 var(--space-xl);
+}
+.flourishHeading::before,
+.flourishHeading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 50px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-mat));
+}
+.flourishHeading::before {
+  right: 0;
+}
+.flourishHeading::after {
+  left: 0;
+  transform: scaleX(-1);
+}
+
+/* ── Gold dot pattern ── */
+.dotPattern {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-sm);
+  align-items: center;
+  padding: var(--space-md) 0;
+}
+
+.dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--gold-mat);
+  opacity: 0.4;
+}
+.dot.large {
+  width: 6px;
+  height: 6px;
+  opacity: 0.7;
+}
+
+/* ── Floating gold star ── */
+.goldStar {
+  color: var(--gold-mat);
+  font-size: 1rem;
+  opacity: 0.4;
+  display: inline-block;
+}
+
+/* ── Islamic geometry border ── */
+.geometricBorder {
+  width: 100%;
+  height: 2px;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      transparent 0px,
+      transparent 8px,
+      var(--gold-border) 8px,
+      var(--gold-border) 10px
+    );
+  opacity: 0.5;
+}

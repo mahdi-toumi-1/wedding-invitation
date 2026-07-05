@@ -1,0 +1,231 @@
+/* ============================================================
+   Envelope Component Styles
+   ============================================================ */
+
+.envelopeScene {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-envelope);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(ellipse at 50% 40%, #1E2B26 0%, #0D0D0D 70%);
+  overflow: hidden;
+}
+
+/* Background arabesque pattern */
+.envelopeScene::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 20% 80%, rgba(200,169,106,0.04) 0%, transparent 40%),
+    radial-gradient(circle at 80% 20%, rgba(200,169,106,0.04) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(30,43,38,0.6) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* Floating particles */
+.particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  background: var(--gold-mat);
+  opacity: 0;
+  animation: particleFloat linear infinite;
+}
+
+@keyframes particleFloat {
+  0%   { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+  10%  { opacity: 0.3; }
+  90%  { opacity: 0.1; }
+  100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+}
+
+/* ── Envelope wrapper ── */
+.envelopeWrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xl);
+  cursor: pointer;
+}
+
+/* ── Envelope container ── */
+.envelopeContainer {
+  position: relative;
+  width: 380px;
+  height: 270px;
+  perspective: 1200px;
+  filter: drop-shadow(0 20px 60px rgba(0,0,0,0.8)) drop-shadow(0 0 40px rgba(200,169,106,0.15));
+}
+
+@media (max-width: 480px) {
+  .envelopeContainer {
+    width: 300px;
+    height: 213px;
+  }
+}
+
+/* ── Envelope body (bottom) ── */
+.envelopeBody {
+  position: absolute;
+  inset: 0;
+  border-radius: 4px 4px 6px 6px;
+  overflow: hidden;
+}
+
+.envelopeBodySvg {
+  width: 100%;
+  height: 100%;
+}
+
+/* ── Wax seal ── */
+.waxSeal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 72px;
+  height: 72px;
+  z-index: 10;
+  cursor: pointer;
+  transform-origin: center;
+}
+
+@media (max-width: 480px) {
+  .waxSeal {
+    width: 56px;
+    height: 56px;
+  }
+}
+
+/* ── Flap (animated) ── */
+.envelopeFlap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  transform-origin: top center;
+  z-index: 5;
+}
+
+.envelopeFlapSvg {
+  width: 100%;
+  display: block;
+}
+
+/* ── Card inside ── */
+.envelopeCard {
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  bottom: 6px;
+  height: 75%;
+  background: linear-gradient(160deg, var(--ivory) 0%, var(--cream) 50%, var(--champagne) 100%);
+  border-radius: 3px;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(200,169,106,0.3);
+  box-shadow: 0 0 0 1px rgba(200,169,106,0.1);
+}
+
+.envelopeCardContent {
+  text-align: center;
+  color: var(--text-dark);
+  font-family: var(--font-title);
+  padding: var(--space-sm);
+}
+
+.envelopeCardMonogram {
+  font-size: 1.8rem;
+  color: var(--gold-mat);
+  letter-spacing: 0.1em;
+  display: block;
+}
+
+.envelopeCardLine {
+  width: 60%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-mat), transparent);
+  margin: var(--space-xs) auto;
+}
+
+.envelopeCardSubtext {
+  font-size: 0.65rem;
+  font-family: var(--font-body);
+  color: var(--gold-dark);
+  letter-spacing: 0.15em;
+  font-weight: 600;
+}
+
+/* ── CTA text below envelope ── */
+.ctaText {
+  font-family: var(--font-body);
+  font-size: clamp(0.9rem, 2vw, 1.15rem);
+  color: var(--gold-mat);
+  letter-spacing: 0.12em;
+  text-align: center;
+  font-weight: 500;
+  animation: float 3s ease-in-out infinite;
+}
+
+.ctaArrow {
+  display: block;
+  text-align: center;
+  color: var(--gold-mat);
+  font-size: 1.4rem;
+  margin-top: var(--space-xs);
+  opacity: 0.7;
+  animation: float 3s ease-in-out infinite 0.5s;
+}
+
+/* ── Pulse ring behind envelope ── */
+.pulseRing {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120%;
+  height: 120%;
+  border: 1px solid rgba(200,169,106,0.15);
+  border-radius: 8px;
+  animation: pulseRingAnim 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.pulseRing:nth-child(2) {
+  width: 140%;
+  height: 140%;
+  animation-delay: 0.5s;
+  opacity: 0.5;
+}
+
+@keyframes pulseRingAnim {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.3; }
+  50%       { transform: translate(-50%, -50%) scale(1.05); opacity: 0.1; }
+}
+
+/* ── Corner decorations ── */
+.cornerDecor {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  opacity: 0.15;
+  pointer-events: none;
+}
+.cornerDecor.topLeft    { top: 20px; left: 20px; }
+.cornerDecor.topRight   { top: 20px; right: 20px; transform: scaleX(-1); }
+.cornerDecor.bottomLeft { bottom: 20px; left: 20px; transform: scaleY(-1); }
+.cornerDecor.bottomRight{ bottom: 20px; right: 20px; transform: scale(-1); }

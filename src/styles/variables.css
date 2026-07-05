@@ -1,0 +1,78 @@
+/* ============================================================
+   WEDDING INVITATION — Variables CSS & Design System
+   LIGHT THEME — Palette claire, épurée, premium
+   ============================================================ */
+
+:root {
+  /* ── Backgrounds (Light) ── */
+  --bg-deep:        #F7F4EF;
+  --bg-surface:     #FDFCFA;
+  --bg-card:        #FFFFFF;
+  --bg-forest:      #EFF5F0;
+  --bg-overlay:     rgba(250, 248, 244, 0.92);
+
+  /* ── Gold Palette ── */
+  --gold-mat:       #A8864A;
+  --gold-light:     #C8A96A;
+  --gold-pale:      #E0C88A;
+  --gold-dark:      #7A6030;
+  --gold-shine:     #D4B07A;
+  --gold-shadow:    rgba(168, 134, 74, 0.12);
+  --gold-glow:      rgba(168, 134, 74, 0.20);
+  --gold-border:    rgba(168, 134, 74, 0.25);
+  --gold-strong:    rgba(168, 134, 74, 0.6);
+
+  /* ── Ivory / Cream ── */
+  --ivory:          #FDFAF4;
+  --cream:          #F8F3E8;
+  --champagne:      #F2E9D0;
+  --parchment:      #EAD9B0;
+  --beige-sand:     #D4C4A0;
+
+  /* ── Text (dark on light bg) ── */
+  --text-primary:   #2A1F10;
+  --text-secondary: #5A4A28;
+  --text-muted:     #9A8A68;
+  --text-dark:      #1A1208;
+  --text-gold:      #A8864A;
+
+  /* ── Shadows (light theme — soft) ── */
+  --shadow-sm:      0 2px 8px rgba(42, 31, 16, 0.06);
+  --shadow-md:      0 8px 24px rgba(42, 31, 16, 0.08);
+  --shadow-lg:      0 16px 48px rgba(42, 31, 16, 0.10);
+  --shadow-gold:    0 0 24px rgba(168, 134, 74, 0.12), 0 0 48px rgba(168, 134, 74, 0.06);
+  --shadow-card:    0 4px 24px rgba(42, 31, 16, 0.08), 0 0 0 1px rgba(168, 134, 74, 0.08);
+
+  /* ── Fonts ── */
+  --font-title:     'Amiri', 'Noto Naskh Arabic', serif;
+  --font-body:      'Cairo', 'Noto Naskh Arabic', sans-serif;
+  --font-quran:     'Noto Naskh Arabic', 'Amiri', serif;
+
+  /* ── Spacing ── */
+  --space-xs:       0.25rem;
+  --space-sm:       0.5rem;
+  --space-md:       1rem;
+  --space-lg:       1.5rem;
+  --space-xl:       2.5rem;
+  --space-2xl:      4rem;
+  --space-3xl:      6rem;
+
+  /* ── Border Radius ── */
+  --radius-sm:      4px;
+  --radius-md:      8px;
+  --radius-lg:      16px;
+  --radius-xl:      24px;
+  --radius-full:    9999px;
+
+  /* ── Transitions ── */
+  --ease-elegant:   cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-spring:    cubic-bezier(0.34, 1.56, 0.64, 1);
+  --transition-sm:  0.3s var(--ease-elegant);
+  --transition-md:  0.6s var(--ease-elegant);
+  --transition-lg:  1.0s var(--ease-elegant);
+
+  /* ── Z-Index ── */
+  --z-door:         100;
+  --z-overlay:      200;
+  --z-modal:        300;
+}

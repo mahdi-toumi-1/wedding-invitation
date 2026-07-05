@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="40%">
+      <stop offset="0%" stop-color="#E8C97A"/>
+      <stop offset="60%" stop-color="#C8A96A"/>
+      <stop offset="100%" stop-color="#8A6030"/>
+    </radialGradient>
+    <radialGradient id="shine" cx="40%" cy="35%">
+      <stop offset="0%" stop-color="rgba(255,240,180,0.5)"/>
+      <stop offset="100%" stop-color="rgba(255,240,180,0)"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Wax seal circle -->
+  <circle cx="32" cy="32" r="30" fill="url(#bg)"/>
+  <circle cx="32" cy="32" r="30" fill="url(#shine)"/>
+  <circle cx="32" cy="32" r="27" fill="none" stroke="rgba(255,235,160,0.3)" stroke-width="1"/>
+  <circle cx="32" cy="32" r="22" fill="none" stroke="rgba(255,235,160,0.2)" stroke-width="0.5"/>
+
+  <!-- Decorative spokes -->
+  <line x1="32" y1="2" x2="32" y2="6" stroke="rgba(255,230,140,0.5)" stroke-width="1.5"/>
+  <line x1="32" y1="58" x2="32" y2="62" stroke="rgba(255,230,140,0.5)" stroke-width="1.5"/>
+  <line x1="2" y1="32" x2="6" y2="32" stroke="rgba(255,230,140,0.5)" stroke-width="1.5"/>
+  <line x1="58" y1="32" x2="62" y2="32" stroke="rgba(255,230,140,0.5)" stroke-width="1.5"/>
+
+  <!-- Monogram -->
+  <text x="32" y="27" text-anchor="middle" dominant-baseline="middle"
+    font-family="serif" font-size="12" font-weight="bold"
+    fill="rgba(60,35,5,0.85)">غ</text>
+  <text x="32" y="37" text-anchor="middle" dominant-baseline="middle"
+    font-family="serif" font-size="8"
+    fill="rgba(60,35,5,0.6)">♥</text>
+  <text x="32" y="47" text-anchor="middle" dominant-baseline="middle"
+    font-family="serif" font-size="12" font-weight="bold"
+    fill="rgba(60,35,5,0.85)">آ</text>
+</svg>

@@ -1,0 +1,208 @@
+/* ============================================================
+   Couple Component Styles
+   ============================================================ */
+
+.section {
+  position: relative;
+  padding: var(--space-3xl) var(--space-xl);
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 50% 50%, rgba(168,134,74,0.06) 0%, transparent 70%),
+    var(--bg-deep);
+}
+
+/* Soft bokeh effect */
+.section::before {
+  content: '';
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(200,169,106,0.05) 0%, transparent 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 800px;
+  width: 100%;
+}
+
+.sectionLabel {
+  font-family: var(--font-body);
+  font-size: clamp(0.75rem, 1.5vw, 0.9rem);
+  color: var(--gold-mat);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-xl);
+  opacity: 0.7;
+}
+
+/* ── Names layout ── */
+.namesContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xl);
+  width: 100%;
+}
+
+.imageWrapper {
+  margin-bottom: var(--space-2xl);
+  display: flex;
+  justify-content: center;
+}
+
+.coupleImage {
+  width: 240px;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid rgba(168, 134, 74, 0.4);
+  padding: 6px;
+  background-color: var(--bg-surface);
+  box-shadow: 
+    0 15px 40px rgba(168, 134, 74, 0.15),
+    inset 0 0 0 1px rgba(168, 134, 74, 0.1);
+  transition: transform 0.5s var(--ease-elegant);
+}
+.coupleImage:hover {
+  transform: scale(1.02) translateY(-4px);
+}
+
+/* ── Individual name card ── */
+.nameCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.nameRole {
+  font-family: var(--font-body);
+  font-size: clamp(0.75rem, 1.5vw, 0.9rem);
+  color: var(--gold-mat);
+  letter-spacing: 0.2em;
+  opacity: 0.8;
+}
+
+.nameMain {
+  font-family: var(--font-title);
+  font-size: clamp(2rem, 5vw, 3.8rem);
+  font-weight: 700;
+  line-height: 1.2;
+  background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold-mat) 50%, var(--gold-dark) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: none;
+}
+
+.nameRow {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: center;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.nameFamily {
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.nameUnderline {
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold-mat), transparent);
+  margin: var(--space-xs) auto 0;
+  border-radius: var(--radius-full);
+}
+
+/* ── Central rose ── */
+.roseContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.roseIcon {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  color: var(--gold-dark);
+  filter: drop-shadow(0 0 10px rgba(168, 134, 74, 0.2));
+  animation: float 4s ease-in-out infinite;
+}
+
+.roseDividerLine {
+  width: 1px;
+  height: 60px;
+  background: linear-gradient(180deg, transparent, var(--gold-border), transparent);
+}
+
+/* ── Bottom text ── */
+.bottomText {
+  margin-top: var(--space-2xl);
+  font-family: var(--font-title);
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  color: var(--text-secondary);
+  font-style: italic;
+  letter-spacing: 0.05em;
+}
+
+/* ── Decorative rings ── */
+.decorRing {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid var(--gold-border);
+  pointer-events: none;
+  opacity: 0.08;
+  animation: pulseRingAnim 6s ease-in-out infinite;
+}
+.decorRing:nth-child(1) {
+  width: 300px; height: 300px;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+}
+.decorRing:nth-child(2) {
+  width: 500px; height: 500px;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  animation-delay: 1s;
+  opacity: 0.04;
+}
+.decorRing:nth-child(3) {
+  width: 700px; height: 700px;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  animation-delay: 2s;
+  opacity: 0.02;
+}
+
+@media (max-width: 600px) {
+  .namesWrapper {
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
+  .roseDividerLine {
+    width: 40px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold-border), transparent);
+  }
+  .roseContainer {
+    flex-direction: row;
+    gap: var(--space-md);
+  }
+}

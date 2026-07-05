@@ -1,0 +1,269 @@
+/* ============================================================
+   SlidingDoor Component Styles
+   Two panels that slide apart to reveal the invitation
+   ============================================================ */
+
+/* ── Scene container (fixed, full screen) ── */
+.scene {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-door);
+  pointer-events: none; /* panels handle events individually */
+  overflow: hidden;
+}
+
+/* ── Individual door panel ── */
+.panel {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  will-change: transform;
+  pointer-events: auto;
+  overflow: hidden;
+
+  /* Clean warm-white with very subtle linear variation */
+  background: linear-gradient(160deg, #FDFCFA 0%, #F5F0E8 100%);
+}
+
+/* Left panel */
+.panelLeft {
+  left: 0;
+  border-right: 1px solid rgba(168, 134, 74, 0.12);
+}
+
+/* Right panel */
+.panelRight {
+  right: 0;
+  border-left: 1px solid rgba(168, 134, 74, 0.12);
+}
+
+/* ── Subtle texture overlay on each panel ── */
+.panelTexture {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  /* Beautiful wedding damask/floral pattern in soft gold */
+  background-image:
+    url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23A8864A' fill-opacity='0.05' fill-rule='evenodd'%3E%3Cpath d='M50 0c27.614 0 50 22.386 50 50s-22.386 50-50 50S0 77.614 0 50 22.386 0 50 0zm0 10C27.909 10 10 27.909 10 50s17.909 40 40 40 40-17.909 40-40S72.091 10 50 10zM50 25c13.807 0 25 11.193 25 25s-11.193 25-25 25-25-11.193-25-25 11.193-25 25-25zm0 10c-8.284 0-15 6.716-15 15s6.716 15 15 15 15-6.716 15-15-6.716-15-15-15z'/%3E%3C/g%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.015'/%3E%3C/svg%3E");
+  background-size: 160px 160px, auto;
+}
+
+/* ── Panel inner decoration (floral arabesque lines) ── */
+.panelDeco {
+  position: absolute;
+  inset: 32px;
+  border: 1px solid rgba(168, 134, 74, 0.10);
+  border-radius: 2px;
+  pointer-events: none;
+}
+.panelDeco::before {
+  content: '';
+  position: absolute;
+  inset: 8px;
+  border: 0.5px solid rgba(168, 134, 74, 0.07);
+  border-radius: 1px;
+}
+
+/* ── Corner ornaments inside each panel ── */
+.panelCorner {
+  position: absolute;
+  width: 52px;
+  height: 52px;
+  opacity: 0.18;
+  pointer-events: none;
+}
+.panelCorner.tl { top: 40px;    left: 40px; }
+.panelCorner.bl { bottom: 40px; left: 40px;  transform: scaleY(-1); }
+.panelCorner.tr { top: 40px;    right: 40px; transform: scaleX(-1); }
+.panelCorner.br { bottom: 40px; right: 40px; transform: scale(-1); }
+
+/* ── Letters on doors ── */
+.doorLetter {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--font-title);
+  font-size: clamp(4rem, 10vw, 8rem);
+  color: var(--gold-mat);
+  text-shadow: 0 4px 20px rgba(168,134,74,0.15);
+  pointer-events: none;
+}
+.panelLeft .doorLetter { right: 8%; }
+.panelRight .doorLetter { left: 8%; }
+
+/* ── Gold vertical edge line on panels (where they meet) ── */
+.panelEdge {
+  position: absolute;
+  top: 10%;
+  bottom: 10%;
+  width: 1px;
+  background: linear-gradient(180deg, transparent, var(--gold-mat), transparent);
+  opacity: 0.25;
+  pointer-events: none;
+}
+.panelLeft .panelEdge  { right: 0; }
+.panelRight .panelEdge { left: 0; }
+
+/* ── Central CTA area (sits above both panels, centered) ── */
+.ctaArea {
+  position: fixed;
+  inset: 0;
+  z-index: calc(var(--z-door) + 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xl);
+  pointer-events: none; /* children handle their own pointer events */
+}
+
+/* ── Monogram / title above button ── */
+.ctaMonogram {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  pointer-events: none;
+}
+
+.ctaMonogramText {
+  font-family: var(--font-title);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  color: var(--text-primary);
+  letter-spacing: 0.12em;
+  line-height: 1;
+  font-weight: 700;
+}
+
+.ctaMonogramSub {
+  font-family: var(--font-body);
+  font-size: clamp(0.7rem, 1.5vw, 0.85rem);
+  color: var(--gold-mat);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.ctaMonogramLine {
+  width: 48px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-mat), transparent);
+  opacity: 0.5;
+  margin: var(--space-xs) 0;
+}
+
+/* ── CTA Button ── */
+.ctaButton {
+  pointer-events: auto;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+  transition: transform 0.3s var(--ease-elegant);
+}
+.ctaButton:focus-visible {
+  outline: 2px solid var(--gold-mat);
+  outline-offset: 8px;
+  border-radius: var(--radius-full);
+}
+
+/* Button pill (Round Seal) */
+.ctaButtonPill {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  border: 1.5px solid var(--gold-mat);
+  border-radius: 50%;
+  overflow: hidden;
+  transition:
+    color 0.35s var(--ease-elegant),
+    box-shadow 0.35s var(--ease-elegant),
+    transform 0.2s var(--ease-spring);
+  background: rgba(253,250,244,0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 
+    0 8px 32px rgba(168,134,74,0.15), 
+    0 0 0 1px rgba(168,134,74,0.1),
+    inset 0 0 0 4px rgba(253,250,244,0.9),
+    inset 0 0 0 5px rgba(168,134,74,0.3);
+}
+
+/* Gentle fade in on hover instead of rising from bottom */
+.ctaButtonPill::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--gold-mat);
+  opacity: 0;
+  transition: opacity 0.4s var(--ease-elegant);
+  border-radius: inherit;
+}
+.ctaButton:hover .ctaButtonPill {
+  color: #fff;
+  box-shadow: 
+    0 12px 40px rgba(168,134,74,0.25), 
+    0 0 0 1px rgba(168,134,74,0.4),
+    inset 0 0 0 2px rgba(253,250,244,0.5);
+  transform: translateY(-2px);
+}
+.ctaButton:hover .ctaButtonPill::before { opacity: 1; }
+.ctaButton:active .ctaButtonPill { transform: scale(0.97) translateY(0); }
+
+.ctaButtonLabel {
+  position: relative;
+  z-index: 1;
+}
+
+.ctaButtonIcon {
+  position: relative;
+  z-index: 1;
+  transition: transform 0.4s var(--ease-elegant);
+}
+/* Subtle scale instead of moving right/left */
+.ctaButton:hover .ctaButtonIcon { transform: scale(1.1); }
+
+/* ── Hint text below button ── */
+.ctaHint {
+  font-family: var(--font-body);
+  font-size: clamp(0.7rem, 1.4vw, 0.8rem);
+  color: var(--text-muted);
+  letter-spacing: 0.15em;
+  pointer-events: none;
+  animation: float 3s ease-in-out infinite;
+}
+
+/* ── Floating gold dust particles ── */
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  background: var(--gold-mat);
+  opacity: 0;
+  animation: particleFloat linear infinite;
+  pointer-events: none;
+}
+
+@keyframes particleFloat {
+  0%   { transform: translateY(40px) rotate(0deg); opacity: 0; }
+  15%  { opacity: 0.15; }
+  85%  { opacity: 0.05; }
+  100% { transform: translateY(-60px) rotate(360deg); opacity: 0; }
+}
+
+@media (max-width: 480px) {
+  .panelCorner { width: 36px; height: 36px; }
+  .panelDeco   { inset: 16px; }
+  .panelCorner.tl { top: 24px;    left: 24px; }
+  .panelCorner.bl { bottom: 24px; left: 24px; }
+  .panelCorner.tr { top: 24px;    right: 24px; }
+  .panelCorner.br { bottom: 24px; right: 24px; }
+}

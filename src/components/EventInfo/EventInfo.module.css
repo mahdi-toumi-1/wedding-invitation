@@ -1,0 +1,193 @@
+/* ============================================================
+   EventInfo Component Styles
+   ============================================================ */
+
+.section {
+  position: relative;
+  padding: var(--space-3xl) var(--space-xl);
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(168, 134, 74, 0.04) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 50%, rgba(168, 134, 74, 0.04) 0%, transparent 50%),
+    var(--bg-surface);
+  overflow: hidden;
+}
+
+/* Grid pattern overlay */
+.section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(0deg,
+      transparent,
+      transparent 40px,
+      rgba(200, 169, 106, 0.02) 40px,
+      rgba(200, 169, 106, 0.02) 41px),
+    repeating-linear-gradient(90deg,
+      transparent,
+      transparent 40px,
+      rgba(200, 169, 106, 0.02) 40px,
+      rgba(200, 169, 106, 0.02) 41px);
+  pointer-events: none;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.sectionTitle {
+  font-family: var(--font-title);
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  color: var(--gold-mat);
+  text-align: center;
+  margin-bottom: var(--space-2xl);
+}
+
+/* ── Cards grid ── */
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-lg);
+}
+
+@media (max-width: 600px) {
+  .cardsGrid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+}
+
+/* ── Info card ── */
+.infoCard {
+  position: relative;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--gold-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl) var(--space-lg);
+  text-align: center;
+  cursor: default;
+  overflow: hidden;
+  transition: transform 0.3s var(--ease-elegant), box-shadow 0.3s var(--ease-elegant), border-color 0.3s;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Hover effect */
+.infoCard:hover {
+  transform: translateY(-6px);
+  border-color: rgba(200, 169, 106, 0.6);
+  box-shadow:
+    0 20px 40px rgba(168, 134, 74, 0.15),
+    0 0 0 1px rgba(168, 134, 74, 0.2),
+    0 0 30px rgba(168, 134, 74, 0.08);
+}
+
+/* Glow on hover — pseudo element */
+.infoCard::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(200, 169, 106, 0.06), transparent 50%, rgba(200, 169, 106, 0.03));
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+.infoCard:hover::before {
+  opacity: 1;
+}
+
+/* Inner shimmer line */
+.infoCard::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-mat), transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.infoCard:hover::after {
+  opacity: 0.6;
+}
+
+/* ── Icon area ── */
+.cardIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: var(--space-md);
+  color: var(--gold-dark);
+  transition: transform 0.3s var(--ease-spring);
+}
+
+.cardIconSvg {
+  width: clamp(2rem, 4vw, 2.8rem);
+  height: clamp(2rem, 4vw, 2.8rem);
+  display: block;
+  color: inherit;
+  filter: drop-shadow(0 0 8px rgba(200, 169, 106, 0.3));
+}
+
+.infoCard:hover .cardIcon {
+  transform: scale(1.15) translateY(-2px);
+}
+
+/* ── Label ── */
+.cardLabel {
+  font-family: var(--font-body);
+  font-size: clamp(0.7rem, 1.4vw, 0.85rem);
+  color: var(--gold-mat);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-sm);
+  opacity: 0.8;
+}
+
+/* ── Value ── */
+.cardValue {
+  font-family: var(--font-title);
+  font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+  color: var(--text-primary);
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: var(--space-xs);
+}
+
+/* ── Sub value ── */
+.cardSubValue {
+  font-family: var(--font-body);
+  font-size: clamp(0.8rem, 1.5vw, 0.95rem);
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ── Decorative line inside card ── */
+.cardDivLine {
+  width: 40px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-mat), transparent);
+  margin: var(--space-sm) auto;
+  border-radius: var(--radius-full);
+}
+
+.signature {
+  margin-top: var(--space-xl);
+  text-align: center;
+  font-family: var(--font-title);
+  font-size: clamp(0.95rem, 2vw, 1.2rem);
+  color: var(--gold-dark);
+  letter-spacing: 0.08em;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: var(--space-2xl) var(--space-md);
+  }
+}

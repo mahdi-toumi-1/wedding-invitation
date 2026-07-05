@@ -1,0 +1,110 @@
+/* ============================================================
+   Footer Component Styles
+   ============================================================ */
+
+.footer {
+  position: relative;
+  padding: var(--space-3xl) var(--space-xl) var(--space-2xl);
+  background:
+    linear-gradient(180deg, var(--bg-surface) 0%, var(--bg-deep) 100%);
+  text-align: center;
+  overflow: hidden;
+  border-top: 1px solid var(--gold-border);
+}
+
+/* Radial glow */
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 200px;
+  background: radial-gradient(ellipse at 50% 0%, rgba(200,169,106,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.footerContent {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+/* ── Main blessing text ── */
+.blessingText {
+  font-family: var(--font-title);
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  color: var(--gold-mat);
+  line-height: 1.6;
+  font-style: italic;
+  text-shadow: 0 0 30px rgba(168,134,74,0.15);
+}
+
+/* ── Names monogram ── */
+.monogram {
+  font-family: var(--font-title);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  color: var(--gold-mat);
+  letter-spacing: 0.15em;
+  opacity: 0.7;
+}
+
+/* ── Separator in footer ── */
+.footerSep {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  width: 100%;
+  max-width: 280px;
+}
+.footerSep::before,
+.footerSep::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-border), transparent);
+}
+.footerSepIcon {
+  color: var(--gold-mat);
+  font-size: 0.8rem;
+  opacity: 0.5;
+}
+
+/* ── Copyright / credits ── */
+.footerDate {
+  font-family: var(--font-body);
+  font-size: clamp(0.75rem, 1.5vw, 0.9rem);
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+}
+
+/* ── Decorative corner lines ── */
+.footerDecorLeft,
+.footerDecorRight {
+  position: absolute;
+  bottom: 0;
+  width: 120px;
+  height: 120px;
+  opacity: 0.08;
+}
+.footerDecorLeft  { left: 0; }
+.footerDecorRight { right: 0; transform: scaleX(-1); }
+
+/* ── Rose bottom decoration ── */
+.footerRose {
+  font-size: 1.5rem;
+  opacity: 0.5;
+  animation: float 4s ease-in-out infinite;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: var(--space-2xl) var(--space-md) var(--space-xl);
+  }
+}
