@@ -107,7 +107,7 @@ export default function InvitationCard() {
 
           {/* Family 2 */}
           <motion.p className={styles.familyNames} {...anim(0.65)}>
-            ويتشرّف السيد كريم البلعيدي والسيدة كريمة البلعيدي
+            ويتشرّف السيد عبد العزيز البلعيدي والسيدة هادية البلعيدي
           </motion.p>
 
           <GoldDivider />
